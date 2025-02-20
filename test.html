@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Question</title>
+    <style>
+      body {
+        background: radial-gradient(circle at center, #001e3c, #000814);
+        color: white;
+        font-family: sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        margin: 0;
+        padding: 20px;
+      }
+
+      .question-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        max-width: 800px;
+      }
+
+      .question,
+      .answer {
+        background: linear-gradient(
+          to bottom,
+          rgba(0, 36, 70, 0.9),
+          rgba(0, 17, 34, 0.9)
+        );
+        border-radius: 50px;
+        padding: 15px 25px;
+        text-align: center;
+        position: relative;
+        width: 80%;
+        margin-bottom: 15px;
+        overflow: hidden;
+        border: 2px solid rgba(0, 150, 255, 0.5);
+        box-shadow: 0 0 20px rgba(0, 150, 255, 0.5);
+        backdrop-filter: blur(8px);
+        transition: transform 0.2s ease-in-out, box-shadow 0.3s ease-in-out;
+      }
+
+      .question:hover,
+      .answer:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 30px rgba(0, 150, 255, 0.8);
+      }
+
+      /* Adding the metallic bar effect */
+      .question::before,
+      .question::after,
+      .answer::before,
+      .answer::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        width: 20%;
+        height: 2px;
+        background: linear-gradient(
+          to right,
+          transparent,
+          #007bff,
+          transparent
+        );
+        transform: translateY(-50%);
+      }
+
+      .question::before,
+      .answer::before {
+        left: -22%;
+      }
+
+      .question::after,
+      .answer::after {
+        right: -22%;
+      }
+
+      .answers-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+        width: 100%;
+      }
+
+      .answer {
+        flex: 1 1 calc(50% - 15px);
+        max-width: 48%;
+        text-align: center;
+        font-size: 18px;
+        cursor: pointer;
+      }
+
+      .answer span {
+        color: #ffc107;
+        margin-right: 5px;
+      }
+
+      /* Enhancing the font styling */
+      .question,
+      .answer {
+        color: #ffffff;
+        font-weight: bold;
+        letter-spacing: 0.5px;
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+      }
+
+      /* Making sure content is on top */
+      .question > *,
+      .answer > * {
+        position: relative;
+        z-index: 1;
+      }
+
+      /* Mobile Adjustments */
+      @media (max-width: 600px) {
+        .answers-container {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .answer {
+          flex: 1 1 100%;
+          max-width: 95%;
+        }
+
+        .question,
+        .answer {
+          width: 95%;
+        }
+
+        .question::before,
+        .question::after,
+        .answer::before,
+        .answer::after {
+          width: 15%;
+        }
+
+        .question::before,
+        .answer::before {
+          left: -15%;
+        }
+
+        .question::after,
+        .answer::after {
+          right: -15%;
+        }
+      }
+
+      /* Sections for Left and Right Answer Groups */
+      .left-section,
+      .right-section {
+        display: flex;
+        gap: 10px;
+        width: 100%;
+      }
+    </style>
+  </head>
+
+  <body>
+  
+  </body>
+</html>
