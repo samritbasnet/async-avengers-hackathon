@@ -2,109 +2,74 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Prize Ladder Game</title>
-  <link rel="stylesheet" href="home.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Toonie Duel</title>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="./scripts/custom.js" defer></script>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <div class="game-container">
-    <div class="game-intro">
-      <h1>Game “Who Wants to Be a Toonie duel Battle?”</h1>
-      <p>
-        "Battle of Duel: Be a Millionaire" is an intense knowledge-based
-        showdown where two contestants go head-to-head for a million-dollar
-        prize. Players must answer 15 escalating questions, with each correct
-        answer bringing them closer to victory. Strategy, intellect, and quick
-        thinking are key as opponents compete to outsmart each other. Are you
-        ready to duel for the fortune? Step up, battle it out, and claim your
-        path to millionaire status!
-      </p>
+  <div class="game-intro">
+    <div class="game-container">
+      <h1>Toonie Duel</h1>
     </div>
-    <div class="image-container">
-      <img src="./assets/images/coin.png" alt="hero image " />
+    <div class="game__instructions">
+      <a href="./instructions.html">
+        <h2>
+          Instructions
+        </h2>
+      </a>
     </div>
-    <div class="game__prize-ladders">
-      <div class="game__prize-ladderuser1">
-        <ul>
-          <li class="prize-ladder__item milestone">
-            <p>Toonie</p>
-          </li>
-          <li class="prize-ladder__item milestone">
-            <p>Loonie</p>
-          </li>
-          <li></li>
-          <li class="prize-ladder__item">
-            <p>50 cents</p>
-          </li>
-          <li class="prize-ladder__item">
-            <p>Dime</p>
-          </li>
-          <li class="prize-ladder__item">
-            <p>4 cents</p>
-          </li>
-          <li class="prize-ladder__item">
-            <p>3 cents</p>
-          </li>
-          <li class="prize-ladder__item milestone">
-            <p>2 cents</p>
-          </li>
-          <li class="prize-ladder__item">
-            <p>Penny</p>
-          </li>
-        </ul>
+  </div>
+  <div class="image-container">
+    <img src="./assets/images/coin.png" alt="hero image " />
+  </div>
+  <div class="container">
+    <div class="question" id="question"></div>
+    <div class="options" id="options"></div>
+    <div id="feedback"></div>
+    <div id="error"></div>
+    <div id="timer">
+      <div id="timer-fill"></div>
+    </div>
+    <div class="money-ladders-container">
+      <div>
+        <h3>Player 1</h3>
+        <ol class="money-ladder" id="money-ladder-1" style="counter-reset: ladder-step 0;">
+          <li>Penny</li>
+          <li>2 cents</li>
+          <li>3 cents</li>
+          <li>4 cents</li>
+          <li>Nickel</li>
+          <li>Dime</li>
+          <li>Quarter</li>
+          <li>50 cents</li>
+          <li>Loonie</li>
+          <li>Toonie</li>
+        </ol>
       </div>
-      <div class="game__prize-ladders">
-        <div class="game__prize-ladderuser2">
-          <ul>
-            <li class="prize-ladder__item milestone">
-              <p>Toonie</p>
-            </li>
-            <li class="prize-ladder__item milestone">
-              <p>Loonie</p>
-            </li>
-            <li></li>
-            <li class="prize-ladder__item">
-              <p>50 cents</p>
-            </li>
-            <li class="prize-ladder__item">
-              <p>Dime</p>
-            </li>
-            <li class="prize-ladder__item">
-              <p>4 cents</p>
-            </li>
-            <li class="prize-ladder__item">
-              <p>3 cents</p>
-            </li>
-            <li class="prize-ladder__item milestone">
-              <p>2 cents</p>
-            </li>
-            <li class="prize-ladder__item">
-              <p>Penny</p>
-            </li>
-          </ul>
-        </div>
+      <div>
+        <h3>Player 2</h3>
+        <ol class="money-ladder" id="money-ladder-2" style="counter-reset: ladder-step 0;">
+          <li>Penny</li>
+          <li>2 cents</li>
+          <li>3 cents</li>
+          <li>4 cents</li>
+          <li>Nickel</li>
+          <li>Dime</li>
+          <li>Quarter</li>
+          <li>50 cents</li>
+          <li>Loonie</li>
+          <li>Toonie</li>
+        </ol>
       </div>
     </div>
-    <div class="question-container">
-      <div class="question-container">
-        <div class="answers-container">
-          <div class="question">
-            Which of these is not an official department of the U.S. government?
-          </div>
-          <div class="left-section">
-            <div class="answer"><span>A:</span> Justice</div>
-            <div class="answer"><span>B:</span> Treasury</div>
-          </div>
-          <div class="right-section">
-            <div class="answer"><span>C:</span> Integrity</div>
-            <div class="answer"><span>D:</span> Defense</div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <script src="./scripts/app.js"></script>
+    <button id="start-button">Start Game</button>
+  </div>
+  <script>
+  </script>
 </body>
 
 </html>
