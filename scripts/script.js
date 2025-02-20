@@ -14,20 +14,23 @@ async function getQuestions() {
             hard: 3
         };
 
-
-
         questions = response.data.results.filter(element => !element.question.includes("&") && !element.correct_answer.includes("&") && !element.incorrect_answers.some(answer => answer.includes("&")));
 
         questions.sort((a, b) => difficulty[a.difficulty] - difficulty[b.difficulty])
 
         console.log(questions);
-
-
-
     }
     catch (error) {
         console.error(`Getting questions: ${error}`);
     }
+
+    function askQuestion() {
+        current = questions.pop();
+        quesEle.innerText = current.question;
+    }
+
+
+
 }
 
 
